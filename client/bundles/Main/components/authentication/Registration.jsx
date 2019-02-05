@@ -36,10 +36,10 @@ export class Registration extends Component {
 	}
 
 	fbLogin() {
-		let role = this.state.role;
-		let params = "?role=" + role;
+		let roleparams = "?role=" + this.state.role;
+		let sessionparams = "&session=" + this.state.sessionId
 		let authUrl = "/users/auth/facebook";
-		document.location.href = authUrl + params;
+		document.location.href = authUrl + roleparams + sessionparams;
 	}
 
 	onSubmit() {

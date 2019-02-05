@@ -4,8 +4,11 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 			@user = User.from_omniauth(request.env['omniauth.auth'], request.env['omniauth.params'])
 			if @user.persisted?
 					sign_in @user, event: :authentication
-					redirect_to root_path
-					set_flash_message(:notice, :success, kind: 'Facebook') if is_navigational_format?
+					unless request.env['omniauth.params']['session'] == ''
+						redirect_to session_path(request.env['omniauth.params']['session'])
+					else
+						redirect_to root_path
+					end
 			else
 					session['devise.facebook_date'] = request.env['omniauth.auth']
 					redirect_to root_path
@@ -17,3 +20,5 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 	end
 
 end
+
+

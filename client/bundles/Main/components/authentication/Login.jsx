@@ -28,7 +28,9 @@ export class Login extends Component {
 	}
 
 	fbLogin() {
-		document.location.href = "/users/auth/facebook";
+		let sessionparams = "?session=" + this.state.sessionId
+		let authUrl = "/users/auth/facebook";
+		document.location.href = authUrl + sessionparams;
 	}
 
 	onSubmit() {
