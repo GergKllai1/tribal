@@ -20,7 +20,7 @@ class TransactionsController < ApplicationController
 			session.users << current_user
 			redirect_to root_path, notice: "You just purchased a session!"
 		else
-			session.users - [current_user]
+			# session.users - [current_user]
 			redirect_to session_path(session.id), notice: "Charge declined!"
 		end
 	end
