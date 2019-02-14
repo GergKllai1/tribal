@@ -15,7 +15,7 @@ const stripeTokenHandler = (token) => {
 };
 
 const initiateStripe = () => {
-	const stripe = Stripe("pk_test_fkX4fHRDfkBHmGV6DUqT9ahX");
+	const stripe = Stripe("pk_test_QicERB8w3kyqaYW3hUUQylRH");
 
 	const elements = stripe.elements();
 

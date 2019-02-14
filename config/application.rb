@@ -27,7 +27,7 @@ module Tribal
       generate.controller_specs false
       generate.system_tests false
 		end
-		config.stripe.publishable_key = 'pk_test_fkX4fHRDfkBHmGV6DUqT9ahX'
+		config.stripe.publishable_key = 'pk_test_QicERB8w3kyqaYW3hUUQylRH'
     config.stripe.secret_key = Rails.application.credentials.stripe[:secret_key]
   end
 end
