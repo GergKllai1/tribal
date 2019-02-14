@@ -25,14 +25,4 @@ RSpec.describe User, type: :model do
       expect(create(:user)).to be_valid
     end
 	end
-
-	describe 'OAuth methods' do
-		let(:auth_response) {OmniAuth::AuthHash.new(OmniAuthFixtures.facebook_mock)}
-		let(:auth_params) {OmniAuth::AuthHash.new(OmniAuthFixtures.facebook_params)}
-    it "creates an instance from an oauth hash" do
-      create_user = lambda {User.from_omniauth(auth_response, auth_params)
-      }
-      expect{create_user.call}.to change{User.count}.from(0).to(1)
-    end
-  end
 end
